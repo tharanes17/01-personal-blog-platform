@@ -30,3 +30,12 @@ export const getByTag = (tag) => {
             throw error;
         });
 }
+
+export const deleteArticle = (id) => {
+    return AxiosInstance.delete(`/articles/${id}`)
+        .then(response => response.data)
+        .catch(error => {
+            console.error("Error deleting article:", error);
+            throw error;
+        });
+}

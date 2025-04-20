@@ -17,9 +17,11 @@ export default function ArticleForm() {
         let newArticle = {
             title, summary, content, tags
         }
-        createArticle(newArticle);
+        let response = createArticle(newArticle);
         console.log("Form submitted", newArticle);
-        navigate("/"); // Use navigate function to redirect
+        response.then( res => {
+            navigate("/"); // Use navigate function to redirect
+        });
     }
 
     const addTag = ( e) => {
